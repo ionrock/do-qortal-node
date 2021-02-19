@@ -17,13 +17,20 @@ pushd /opt/qortal
 chmod +x start.sh
 chmod +x stop.sh
 
+echo "Edit our settings to ensure we have at least 8 blockchain peers"
+cat << EOF > settings.json
+{
+    "minBlockchainPeers": 8
+}
+EOF
+
 echo "Grabbing the bootstrap file."
 wget https://cloud.crowetic.com/s/6rDwKQji3tARNcx/download && mv download db-crowetic-2.1.2021.zip
 unzip db-crowetic-2.1.2021.zip
 
 echo "Create our qortal user and group"
 groupadd qortal
-useradd -g qortal qortal
+useradd -g qortal -d /opt/qortal -s /usr/bin/bash qortal
 
 echo "Set /opt/qortal to be owned by our qortal user"
 chown -R qortal:qortal /opt/qortal
