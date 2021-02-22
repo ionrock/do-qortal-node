@@ -25,7 +25,7 @@ cat << EOF > settings.json
 EOF
 
 echo "Grabbing the bootstrap file."
-wget https://qortaldb-snapshots.sfo3.cdn.digitaloceanspaces.com/qortal-db-2021-02-19.7z
+wget https://qortaldb-snapshots.sfo3.digitaloceanspaces.com/qortal-db-2021-02-19.7z
 p7zip -d qortal-db-2021-02-19.7z
 
 echo "Create our qortal user and group"
