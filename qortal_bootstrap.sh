@@ -2,13 +2,13 @@
 
 set -xe
 
-apt update && apt install -yq wget unzip openjdk-14-jre
+apt update && apt install -yq wget unzip p7zip openjdk-14-jre
 
 echo "Working out of /opt for our qortal core install."
 pushd /opt
 
-wget https://github.com/Qortal/qortal/releases/download/v1.4.1/qortal-1.4.1.zip
-unzip qortal-1.4.1.zip
+wget https://github.com/Qortal/qortal/releases/download/v1.4.2/qortal-1.4.2.zip
+unzip qortal-1.4.2.zip
 
 echo "Our qortal core is installed in '/opt/qortal'"
 pushd /opt/qortal
@@ -25,8 +25,8 @@ cat << EOF > settings.json
 EOF
 
 echo "Grabbing the bootstrap file."
-wget https://cloud.crowetic.com/s/6rDwKQji3tARNcx/download && mv download db-crowetic-2.1.2021.zip
-unzip db-crowetic-2.1.2021.zip
+wget https://qortaldb-snapshots.sfo3.cdn.digitaloceanspaces.com/qortal-db-2021-02-19.7z
+p7zip -d qortal-db-2021-02-19.7z
 
 echo "Create our qortal user and group"
 groupadd qortal
