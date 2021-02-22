@@ -2,7 +2,7 @@ resource "digitalocean_droplet" "qortal-node" {
   image = "ubuntu-20-04-x64"
   name = "qortal-node"
   region = "sfo3"
-  size = "s-1vcpu-1gb"
+  size = "s-1vcpu-2gb"
   private_networking = true
   ssh_keys = [
     data.digitalocean_ssh_key.main.id
