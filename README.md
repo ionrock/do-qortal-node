@@ -1,6 +1,6 @@
 # Running a Qortal Node on DigitalOcean
 
-[Qortal](https://qortal.org) is a blockchain network that is designed for created a more distributed internet. It does have a coin that is created via minting rather using a Proof of Work system like BitCoin.
+[Qortal](https://qortal.org) is a blockchain network that is designed to help create a more distributed internet. It does have a coin that is created via minting rather using a Proof of Work system like BitCoin.
 
 This repository helps set up a cloud server on DigitalOcean for running the qortal "core" server. Qortal Core is how someone is able to participate in the network and mint coin if desired.
 
